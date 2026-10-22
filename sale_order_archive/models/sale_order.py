@@ -8,7 +8,10 @@ from odoo.exceptions import UserError
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
-    active = fields.Boolean(copy=False, default=True)
+    active = fields.Boolean(
+        copy=False,
+        default=True,
+    )
 
     def action_archive(self):
         if self.filtered(
